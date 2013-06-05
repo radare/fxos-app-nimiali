@@ -6,7 +6,7 @@ dict:
 	ln -fs toki.js toki-offline.js
 
 ffos fxos zip:
-	rm -f ../nimiali.zip
+	rm -f ../nimiali.zip nimiali.zip
 	zip -r ../nimiali.zip *
 	mv ../nimiali.zip .
 

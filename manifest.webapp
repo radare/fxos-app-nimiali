@@ -4,7 +4,7 @@
   "launch_path": "/index.html",
 "package_path": "http://lolcathost.org/tid/nimiali.zip",
 "developer_notes": "First release",
-"size":129035,
+"size":207823,
 "version": "0.1",
   "icons": {
     "128": "/icon128.png",
@@ -12,7 +12,7 @@
   },
   "developer": {
     "name": "pancake",
-    "url": "http://nimiali.ffos.lolcathost.org/"
+    "url": "http://lolcathost.org/tid"
   },
   "default_locale": "en"
 }
