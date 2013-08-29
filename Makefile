@@ -3,7 +3,7 @@ all: dict
 
 FILES=icon.png icon*.png startup.png main.manifest manifest.webapp
 FILES+=index.html jquery.js jquery.autocomplete.js index.css
-FILES+=shared install.js README.md toki.js main.js
+FILES+=shared README.md toki.js main.js
 
 dict:
 	perl text2row.pl < tokipona-dictionary.txt > toki.js 
