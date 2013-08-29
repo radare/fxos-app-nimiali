@@ -307,6 +307,8 @@ alert("jij");
     },
 
     processResponse: function(text) {
+/*
+NOTE: eval is dangerous and we don't need it
       var response;
       try {
         response = eval('(' + text + ')');
@@ -321,6 +323,7 @@ alert("jij");
         this.data = response.data;
         this.suggest(); 
       }
+*/
     },
 
     activate: function(index) {
