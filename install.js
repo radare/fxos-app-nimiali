@@ -1,9 +1,9 @@
 (function() {
 const project = "nimiali";
-const manifest_url = "http://"+project+".ffos.lolcathost.org/manifest.webapp";
+const manifest_url = "http://"+project+".ffos.lolcathost.org/packaged.webapp";
 
 function install() {
-	var myapp = navigator.mozApps.install(manifest_url);
+	var myapp = navigator.mozApps.installPackage (manifest_url);
 	myapp.onsuccess = function(data) {
 		this.parentNode.removeChild(this);
 	};

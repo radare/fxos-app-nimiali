@@ -2,6 +2,8 @@
   "name": "nimi ali",
   "description": "Tokipona-English dictionary helper",
   "launch_path": "/index.html",
+  "package_path": "http://lolcathost.org/tid/nimiali.zip",
+  "size":207823,
   "version": "0.2",
   "icons": {
     "128": "/icon128.png",
