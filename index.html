@@ -1,149 +1,37 @@
 <html manifest="main.manifest">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Tokipona</title>
-	<meta content="yes" name="apple-mobile-web-app-capable" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=false" />
-	<link rel="apple-touch-icon" href="icon.png"/>
-	<link href="startup.png" rel="apple-touch-startup-image" />
-	<!-- <script defer src="install.js"></script> -->
-	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript" src="jquery.autocomplete.js"></script>
-	<link rel="stylesheet" type="text/css" href="shared/style/responsive.css"/>
-<style>
-html {
-	font-size: 10px;
-	font-family:Arial,Verdana;
-	overflow-x: hidden;
-}
-i {
-	color: #E3DC12 !important;
-	font-family: sans-serif;
-}
-input {
-	text-align:center;
-	height:3rem;
-	color: #101010 !important;
-	background-color: #e3dC22 !important;
-	font-family: sans-serif;
-	font-size: 2rem;
-	border-radius: 1rem;
-}
-body {
-	margin:0px;
-	color:white !important;
-	background-color:black !important;
-}
-div {
-	font-family: sans-serif;
-	font-size: 1.5rem !important;
-}
-a {
-	color:#e3eC32;
-}
-.tapme {
-	height:2.5rem;
-	cursor:pointer;
-	width:2.5rem;
-	background-color:#d0d0d0;
-	border-radius:1rem;
-	color:black;
-	font-size:2rem !important;
-	text-align:center;
-}
-.query_input {
-	border:0px;
-	background-color:#e0e0e0;
-	width:100%;
-}
-.about {
-	margin:0px;
-	background-color:#202020;
-	visibility:hidden;
-	position:absolute;
-	width:100%;
-	height:100%;
-	overflow:hidden;
-}
-</style>
-<script type="text/javascript" src="toki.js"></script>
-<script>
-function hideAbout () {
-	var a = document.getElementById ('about');
-	a.style.visibility = 'hidden';
-}
-
-function showAbout () {
-	const initstr = "o sitelen toki";
-	var txt = document.getElementById ('query');
-	var tme = document.getElementById ('tapme');
-	if (txt.value != "" && txt.value != initstr) {
-		txt.value = '';
-		tme.innerHTML = ' ? ';
-		txt.focus ();
-	} else {
-		txt.value = initstr;
-		document.getElementById ('about').style.visibility = 'visible';
-	}
-}
-
-var ac;
-
-function inputClicked() {
-	document.getElementById ('query').value='';
-	ac.onValueChange ();
-}
-
-function onOrientationChange(callback) {
-        var layout = undefined;
-	var ow = window.innerWidth;
-        var onResize = function () {
-		var w = window.innerWidth;
-		if (w != ow) {
-			/* do not redraw when keyboard is shown */
-			const lay = w>window.innerHeight?
-				"landscape": "portrait";
-			if (!layout || layout != lay) {
-				callback (lay);
-				layout = lay;
-			}
-			ow = w;
-		}
-                window.addEventListener ("resize", onResize);
-        }
-        window.addEventListener ("resize", onResize);
-        onResize ();
-}
-
-function init() {
-	ac = $('#query').autocomplete ({
-		deferRequestBy: 100,
-		lookup: toki
-	});
-        onOrientationChange (function (o) {
-		ac.container.css({ width:window.innerWidth-10 });
-        });
-}
-</script>
+  <title>Tokipona</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=false" />
+  <link rel="apple-touch-icon" href="icon.png"/>
+  <link href="startup.png" rel="apple-touch-startup-image" />
+  <!-- <script defer src="install.js"></script> -->
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="jquery.autocomplete.js"></script>
+  <link rel="stylesheet" type="text/css" href="shared/style/responsive.css"/>
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <script type="text/javascript" src="toki.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </head>
-<body onload="init()">
-<div id="about" class="about">
-<center>
-<h2>nimi ali</h2>
-<h4>the interactive tokipona dictionary</h4>
-<img style='cursor:pointer' onclick='hideAbout()' src="icon128.png" border=0 />
-<h2> by <a href="mailto:pancake@nopcode.org">pancake</a></h2>
-</center>
-</div>
-<table style="width:100%"><tr>
-<td style="width:100%">
-<input onclick="inputClicked()" autocomplete="off" class="query_input" 
-	type="text" id="query" value="o sitelen toki" />
-</td><td>
-<div id="tapme" onclick="showAbout()" class="tapme"> ? </div>
-</td></tr>
-</table>
-</div>
+<body id='body'>
+  <div id="about" class="about">
+  <center>
+  <h2>nimi ali</h2>
+  <h4>the interactive tokipona dictionary</h4>
+  <img id='icon' style='cursor:pointer' src="icon128.png" border=0 />
+  <h2> by <a href="mailto:pancake@nopcode.org">pancake</a></h2>
+  </center>
+  </div>
+  <table style="width:100%"><tr>
+    <td style="width:100%">
+      <input autocomplete="off" class="query_input" 
+    	type="text" id="query" value="o sitelen toki" />
+    </td><td>
+      <div id="tapme" class="tapme"> ? </div>
+    </td></tr>
+  </table>
+  </div>
 </body>
 </html>
