@@ -12,4 +12,8 @@ sina wile ala wile lukin e nanpa sitelen ni? o tawa:
 
   http://github.com/radare/fxos-app-nimiali
 
+nimi ali kepeken e toki pi ma Kutia
+
+  http://ixite.ru/toki_pona/tp_rus_dictionary/
+
 --pancake

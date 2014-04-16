@@ -35,10 +35,10 @@ function hideAbout () {
 }
 
 function showAbout () {
-	const initstr = "o sitelen toki";
+	var initstr = "o sitelen toki";
 	var txt = document.getElementById ('query');
 	var tme = document.getElementById ('tapme');
-	if (txt.value != "" && txt.value != initstr) {
+	if ((txt.value != "") && (txt.value != initstr)) {
 		txt.value = '';
 		tme.innerHTML = ' ? ';
 		txt.focus ();
@@ -49,7 +49,7 @@ function showAbout () {
 }
 
 function inputClicked() {
-	document.getElementById ('query').value='';
+	document.getElementById ('query').value = '';
 	ac.onValueChange ();
 }
 

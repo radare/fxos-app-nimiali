@@ -4,7 +4,10 @@
   "launch_path": "/index.html",
   "version": "0.3",
   "icons": {
+    "256": "/icon256.png",
     "128": "/icon128.png",
+    "120": "/icon120.png",
+    "90": "/icon90.png",
     "64": "/icon64.png",
     "60": "/icon60.png",
     "32": "/icon32.png"
