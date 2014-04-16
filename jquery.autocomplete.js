@@ -13,11 +13,17 @@
 
 (function($) {
 
-  var reEscape = new RegExp('(\\' + ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'].join('|\\') + ')', 'g');
+  var reEscape = new RegExp('(\\' + [
+      '/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'
+    ].join('|\\') + ')', 'g');
 
   function fnFormatResult(value, data, currentValue) {
-    var pattern = '(' + currentValue.replace(reEscape, '\\$1') + ')';
-    return value.replace(new RegExp(pattern, 'gi'), '<strong>$1<\/strong>');
+    var cv = currentValue.replace(/</g,"").replace(/>/g,"").replace(/@/g, "");
+    if (!cv) return "";
+    var pattern = '(' + cv.replace(reEscape, '\\$1') + ')';
+    var ret = value.replace(/i>/g, "@>");
+    ret = ret.replace(new RegExp(pattern, 'gi'), '<strong>$1<\/strong>');
+    return ret.replace (/@>/g, "i>");
   }
 
   function Autocomplete(el, options) {
