@@ -1,4 +1,4 @@
-const toki = [
+const toki_en = [
 '<i>a a a! </i>:: Hahaha! (laughter)',
 '<i>a a a! ni li musi </i>:: Hahaha! That\'s funny',
 '<i>a a a! sina nasa </i>:: Hahaha! You\'re crazy',

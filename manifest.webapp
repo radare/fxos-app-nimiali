@@ -2,7 +2,7 @@
   "name": "nimi ali",
   "description": "Tokipona-English dictionary helper",
   "launch_path": "/index.html",
-  "version": "0.2",
+  "version": "0.3",
   "icons": {
     "128": "/icon128.png",
     "64": "/icon64.png",

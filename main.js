@@ -1,5 +1,24 @@
+
 var ac;
+var toki;
+
+function selectLang() {
+	var language = $('#language').val ();
+	if (language == "russian")
+		toki = toki_ru;
+	else toki = toki_en;
+	if (ac) {
+		ac.setOptions ({"lookup": toki});
+	}
+}
+
 window.addEventListener ('load', function() {
+	$('#icon').click (hideAbout);
+	$('#query').click (inputClicked);
+	$('#tapme').click (showAbout);
+	$('#language').change (selectLang);
+	selectLang();
+
 	ac = $('#query').autocomplete ({
 		deferRequestBy: 100,
 		lookup: toki
@@ -7,9 +26,7 @@ window.addEventListener ('load', function() {
 	onOrientationChange (function (o) {
 		ac.container.css ({ width:window.innerWidth-10 });
 	});
-	$('#icon').click (hideAbout);
-	$('#query').click (inputClicked);
-	$('#tapme').click (showAbout);
+	
 });
 
 function hideAbout () {
@@ -51,8 +68,10 @@ function onOrientationChange(callback) {
 			}
 			ow = w;
 		}
+		window.removeEventListener ("resize", onResize);
                 window.addEventListener ("resize", onResize);
         }
+	window.removeEventListener ("resize", onResize);
         window.addEventListener ("resize", onResize);
         onResize ();
 }
